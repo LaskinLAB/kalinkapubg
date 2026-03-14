@@ -132,10 +132,28 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+       /* Общий эффект прыжка для всех кнопок */
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(123, 97, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+
+        /* Индивидуальная светлая подсветка для Telegram (Голубой) */
+        .btn-tg:hover {
+            box-shadow: 0 8px 20px rgba(58, 138, 203, 0.5);
+            background: linear-gradient(90deg, #4a80b5 0%, #5cb3f0 100%);
+        }
+
+        /* Индивидуальная светлая подсветка для YouTube (Красный) */
+        .btn-yt:hover {
+            box-shadow: 0 8px 20px rgba(203, 42, 42, 0.5);
+            background: linear-gradient(90deg, #a63232 0%, #e64545 100%);
+        }
+
+        /* Индивидуальная светлая подсветка для Twitch (Фиолетовый) */
+        .btn-tw:hover {
+            box-shadow: 0 8px 20px rgba(122, 42, 203, 0.5);
+            background: linear-gradient(90deg, #6633b3 0%, #9947ff 100%);
         }
 
         .btn img {
@@ -151,24 +169,7 @@
         .tw { background: linear-gradient(90deg, #4b1e8b 0%, #6a2cc9 100%); }
         
         
-        /* Градиенты и ИНДИВИДУАЛЬНАЯ ПОДСВЕТКА */
-        .btn-tg { background: linear-gradient(90deg, #2a5a8a 0%, #3a8acb 100%); }
-        .btn-tg:hover { 
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(58, 138, 203, 0.6); 
-        }
-
-        .btn-yt { background: linear-gradient(90deg, #8a1a1a 0%, #cb2a2a 100%); }
-        .btn-yt:hover { 
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(203, 42, 42, 0.6); 
-        }
-
-        .btn-tw { background: linear-gradient(90deg, #4a1a8a 0%, #7a2acb 100%); }
-        .btn-tw:hover { 
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(122, 42, 203, 0.6); 
-        }
+      
         /* Точки внизу */
         .dots {
             display: flex;
