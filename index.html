@@ -11,7 +11,7 @@
     <style>
         :root {
             --card-width: 319px;
-            --card-height: 529px;
+            --card-height: 600px; /* Увеличили высоту, чтобы всё поместилось */
             --btn-width: 272px;
             --btn-height: 55px;
             --main-color: #7B61FF; 
@@ -24,13 +24,11 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* Стильный темный фон */
             background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
             font-family: 'Inter', sans-serif;
             overflow: hidden;
         }
 
-        /* Эффект свечения на фоне */
         body::before {
             content: '';
             position: fixed;
@@ -39,7 +37,6 @@
             z-index: -1;
         }
 
-        /* Основная карточка */
         .card {
             width: var(--card-width);
             height: var(--card-height);
@@ -52,32 +49,34 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top: 100px; /* Увеличили отступ, чтобы шлем не давил сверху */
+            margin-top: 80px; 
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            /* ГЛАВНОЕ ИЗМЕНЕНИЕ: Отступ внутри карточки сверху, чтобы контент ушел вниз */
+            padding-top: 130px; 
+            box-sizing: border-box;
         }
 
-        /* 3D Шлем — ИЗМЕНЕННЫЙ РАЗМЕР И ПОЗИЦИЯ */
+        /* 3D Шлем парит над карточкой */
         model-viewer {
-            width: 260px; /* Сделали компактнее */
-            height: 260px; 
+            width: 320px; 
+            height: 320px; 
             position: absolute;
-            top: -180px; /* Подняли выше над аватаркой */
+            top: -160px; /* Вынесли его за пределы карточки вверх */
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             --poster-color: transparent;
         }
 
-        /* Аватарка */
         .avatar-container {
             width: 115px;
             height: 115px;
-            margin-top: -57px;
             border-radius: 50%;
             border: 3px solid var(--main-color);
             box-shadow: 0 0 25px rgba(123, 97, 255, 0.6);
             overflow: hidden;
             z-index: 2;
+            flex-shrink: 0;
         }
 
         .avatar-container img {
@@ -86,12 +85,11 @@
             object-fit: cover;
         }
 
-        /* Текстовый блок */
         .info {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 20px;
             color: white;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .nickname {
@@ -110,11 +108,10 @@
             line-height: 1.4;
         }
 
-        /* Кнопки */
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
         .btn {
@@ -143,16 +140,16 @@
             margin-right: 18px;
         }
 
+        /* Твои ссылки - вставь свои вместо # */
         .tg { background: linear-gradient(135deg, #1e3c72 0%, #1a1a2e 100%); }
         .yt { background: linear-gradient(135deg, #8b1e1e 0%, #1a1a2e 100%); }
         .tw { background: linear-gradient(135deg, #4b1e8b 0%, #1a1a2e 100%); }
 
-        /* Точки внизу */
         .dots {
             display: flex;
             gap: 12px;
             margin-top: auto;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .dot {
@@ -178,9 +175,9 @@
             ar 
             camera-controls 
             auto-rotate 
-            shadow-intensity="1.5" 
+            shadow-intensity="2" 
             camera-orbit="0deg 75deg 105%"
-            exposure="1"
+            exposure="1.2"
             disable-zoom>
         </model-viewer>
 
